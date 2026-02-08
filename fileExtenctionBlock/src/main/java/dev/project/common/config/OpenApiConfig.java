@@ -12,8 +12,7 @@ public class OpenApiConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("File Extension Block API")
-                        .description("SaaS-style file extension blocking service")
+                        .title("File Extension Blocker API")
                         .version("v1"));
     }
 }

@@ -1,4 +1,4 @@
-package dev.project.domain.policy;
+package dev.project.domain.policy.excep;
 
 import dev.project.domain.DomainException;
 

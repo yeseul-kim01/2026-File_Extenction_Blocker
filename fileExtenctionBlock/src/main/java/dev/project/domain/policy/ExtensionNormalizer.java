@@ -1,5 +1,7 @@
 package dev.project.domain.policy;
 
+import dev.project.domain.policy.excep.InvalidExtensionException;
+
 import java.util.Locale;
 import java.util.regex.Pattern;
 

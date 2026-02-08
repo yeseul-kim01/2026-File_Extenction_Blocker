@@ -37,7 +37,8 @@ public class HttpAccessLogFilter extends OncePerRequestFilter {
         try {
             filterChain.doFilter(request, response);
             status = response.getStatus();
-        } finally {
+        }
+        finally {
             long durationMs = (System.nanoTime() - startNs) / 1_000_000;
 
             String method = request.getMethod();
@@ -46,21 +47,37 @@ public class HttpAccessLogFilter extends OncePerRequestFilter {
             String fullPath = (query == null || query.isBlank()) ? path : (path + "?" + query);
 
             String clientIp = getClientIp(request);
-            String userAgent = safeHeader(request, "User-Agent");
+            String userAgent = LogMasker.mask(sanitizeForLog(safeHeader(request, "User-Agent")));
 
-            String traceId = MDC.get("traceId");
+            // ===== MDC로 필드 주입 =====
+            MDC.put("event", "http.access");
+            MDC.put("method", method);
+            MDC.put("path", fullPath);
+            MDC.put("status", String.valueOf(status));
+            MDC.put("durationMs", String.valueOf(durationMs));
+            MDC.put("clientIp", clientIp);
+            MDC.put("userAgent", userAgent);
 
-            ACCESS_LOG.info(
-                    "event=http.access method={} path=\"{}\" status={} durationMs={} clientIp={} userAgent=\"{}\" traceId={}",
-                    method,
-                    fullPath,
-                    status,
-                    durationMs,
-                    clientIp,
-                    sanitizeForLog(userAgent),
-                    (traceId == null ? "-" : traceId)
-            );
+            try {
+                // ===== 레벨 분기 =====
+                if (status >= 500) {
+                    ACCESS_LOG.error("access");
+                } else if (status >= 400) {
+                    ACCESS_LOG.warn("access");
+                } else {
+                    ACCESS_LOG.info("access");
+                }
+            } finally {
+                MDC.remove("event");
+                MDC.remove("method");
+                MDC.remove("path");
+                MDC.remove("status");
+                MDC.remove("durationMs");
+                MDC.remove("clientIp");
+                MDC.remove("userAgent");
+            }
         }
+
     }
 
     private static String safeHeader(HttpServletRequest req, String name) {

@@ -4,7 +4,6 @@
     <springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="file-extension-block"/>
     <springProperty scope="context" name="ACTIVE" source="spring.profiles.active" defaultValue="dev"/>
     <springProperty scope="context" name="GIT_SHA" source="app.git.sha" defaultValue="local-dev"/>
-    <conversionRule conversionWord="maskedMsg" converterClass="dev.project.common.logging.MaskingMessageConverter"/>
 
     <!-- ===== DEV ===== -->
     <springProfile name="dev,local,h2">

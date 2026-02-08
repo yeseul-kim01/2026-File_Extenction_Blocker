@@ -4,21 +4,24 @@
     <springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="file-extension-block"/>
     <springProperty scope="context" name="ACTIVE" source="spring.profiles.active" defaultValue="dev"/>
     <springProperty scope="context" name="GIT_SHA" source="app.git.sha" defaultValue="local-dev"/>
-
-    <!-- 공통: MDC 키 이름 -->
-    <property name="MDC_TRACE" value="traceId"/>
+    <conversionRule conversionWord="maskedMsg" converterClass="dev.project.common.logging.MaskingMessageConverter"/>
 
     <!-- ===== DEV ===== -->
     <springProfile name="dev,local,h2">
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
-                <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level app=%property{APP_NAME} env=%property{ACTIVE} sha=%property{GIT_SHA} trace=%X{traceId:-} %logger{36} - %msg%n</pattern>
+                <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level app=%property{APP_NAME} env=%property{ACTIVE} sha=%property{GIT_SHA} trace=%X{traceId:-} %logger{36} - %maskedMsg%n</pattern>
             </encoder>
         </appender>
 
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
         </root>
+
+        <!-- Access Log 전용 로거 -->
+        <logger name="ACCESS_LOG" level="INFO" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
     </springProfile>
 
     <!-- ===== PROD: CloudWatch JSON 로그 ===== -->
@@ -33,7 +36,7 @@
                     </timestamp>
                     <logLevel/>
 
-                    <!-- message -->
+                    <!-- message (⚠️ prod에서는 코드에서 LogMasker로 마스킹하는 것을 기본으로) -->
                     <message/>
 
                     <!-- logger / thread -->
@@ -43,6 +46,7 @@
                     <!-- stacktrace -->
                     <stackTrace/>
 
+                    <!-- fixed meta -->
                     <pattern>
                         <pattern>
                             {
@@ -53,6 +57,7 @@
                         </pattern>
                     </pattern>
 
+                    <!-- MDC(traceId 등) -->
                     <mdc/>
 
                 </providers>
@@ -62,6 +67,11 @@
         <root level="INFO">
             <appender-ref ref="JSON_CONSOLE"/>
         </root>
+
+        <!-- Access Log 전용 로거 -->
+        <logger name="ACCESS_LOG" level="INFO" additivity="false">
+            <appender-ref ref="JSON_CONSOLE"/>
+        </logger>
 
         <logger name="org.hibernate.SQL" level="WARN"/>
         <logger name="org.springframework" level="INFO"/>

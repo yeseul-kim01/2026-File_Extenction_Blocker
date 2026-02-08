@@ -25,6 +25,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security' // Config
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0" //swagger
 
+    implementation 'net.logstash.logback:logstash-logback-encoder:7.4' // logging - dev and cloudWatch
 
     runtimeOnly 'org.postgresql:postgresql'
 

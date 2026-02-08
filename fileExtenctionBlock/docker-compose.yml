@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: fileExtenctionBlock-postgres
+    environment:
+      POSTGRES_DB: madrascheck
+      POSTGRES_USER: madrascheck
+      POSTGRES_PASSWORD: "20260209"
+    ports:
+      - "5433:5432"
+    volumes:
+      - madrascheck_pgdata:/var/lib/postgresql/data
+    networks:
+      - madras_networks
+
+volumes:
+  madrascheck_pgdata:
+
+networks:
+  madras_networks:
+    driver: bridge

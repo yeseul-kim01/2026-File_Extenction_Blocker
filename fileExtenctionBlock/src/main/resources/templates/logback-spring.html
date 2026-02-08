@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="APP_NAME" source="spring.application.name" defaultValue="file-extension-block"/>
+    <springProperty scope="context" name="ACTIVE" source="spring.profiles.active" defaultValue="local"/>
+    <springProperty scope="context" name="GIT_SHA" source="app.git.sha" defaultValue="dev"/>
+
+    <property name="CONSOLE_PATTERN"
+              value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} level=%-5level app=${APP_NAME} env=${ACTIVE} sha=${GIT_SHA} trace=%X{traceId:-} span=%X{spanId:-} logger=%logger{36} - %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <springProfile name="prod">
+        <logger name="org.hibernate.SQL" level="WARN"/>
+        <logger name="org.springframework" level="INFO"/>
+    </springProfile>
+
+    <springProfile name="dev">
+        <logger name="org.springframework.web" level="INFO"/>
+    </springProfile>
+
+</configuration>

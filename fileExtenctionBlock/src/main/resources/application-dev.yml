@@ -1,0 +1,12 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/madrascheck
+    username: madrascheck
+    password: 20260209
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false

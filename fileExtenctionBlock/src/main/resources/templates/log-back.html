@@ -1,0 +1,4 @@
+<springProperty scope="context" name="GIT_SHA" source="app.git.sha" defaultValue="local-dev"/>
+
+<property name="CONSOLE_PATTERN"
+          value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} level=%-5level app=${APP_NAME} sha=${GIT_SHA} trace=%X{traceId:-} logger=%logger{36} - %msg%n"/>

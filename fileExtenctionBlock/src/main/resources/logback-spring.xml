@@ -9,7 +9,11 @@
     <springProfile name="dev,local,h2">
         <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
-                <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level app=%property{APP_NAME} env=%property{ACTIVE} sha=%property{GIT_SHA} trace=%X{traceId:-} %logger{36} - %maskedMsg%n</pattern>
+                <pattern>
+                    %d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level app=%property{APP_NAME} env=%property{ACTIVE} sha=%property{GIT_SHA} trace=%X{traceId:-} %logger{36} -
+                    event=%X{event:-} method=%X{method:-} path="%X{path:-}" status=%X{status:-} durationMs=%X{durationMs:-} clientIp=%X{clientIp:-} userAgent="%X{userAgent:-}"
+                    %msg%n
+                </pattern>
             </encoder>
         </appender>
 
@@ -35,7 +39,7 @@
                     </timestamp>
                     <logLevel/>
 
-                    <!-- message (⚠️ prod에서는 코드에서 LogMasker로 마스킹하는 것을 기본으로) -->
+                    <!-- message  -->
                     <message/>
 
                     <!-- logger / thread -->

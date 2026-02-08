@@ -21,8 +21,9 @@ public class SecurityConfig {
                                 "/v3/api-docs/**"
                         ).permitAll() //swagger
                         .requestMatchers("/", "/tenants/**").permitAll()
-                        .requestMatchers("/api/**").authenticated()
-                        .anyRequest().denyAll()
+//                        .requestMatchers("/api/**").authenticated()
+                        .requestMatchers("/api/**").permitAll()
+                                .anyRequest().denyAll()
                 )
                 .httpBasic(Customizer.withDefaults());
 

@@ -46,3 +46,6 @@ bin/
 ### env ###
 .env.prod
 ## dev는 그냥 공개함.
+
+## zip ##
+*.zip

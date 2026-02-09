@@ -17,3 +17,12 @@ spring:
 app:
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS}
+  connection:
+    codeTtlSeconds: 600
+    codePrefix: "KSB"
+    cleanupIntervalSeconds: 60
+
+springdoc:
+  swagger-ui:
+    enabled: false
+

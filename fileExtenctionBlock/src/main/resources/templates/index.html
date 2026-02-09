@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>File Extension Blocker - Tenant</title>
+    <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+<div class="container">
+    <h1>File Extension Blocker</h1>
+    <p class="sub">테넌트별 확장자 차단 정책을 관리합니다.</p>
+
+    <div class="card">
+        <label class="label" for="tenant">Tenant ID</label>
+        <input id="tenant" class="input" placeholder="예: tenant-1" />
+
+        <div class="row">
+            <button id="go" class="btn primary">정책 관리로 이동</button>
+            <button id="clear" class="btn">저장값 초기화</button>
+        </div>
+
+        <p class="hint">
+            ※ API 요청 시 <code>X-Tenant-Id</code> 헤더로 전송됩니다.
+        </p>
+    </div>
+</div>
+
+<script>
+    const KEY = "ks.tenantId";
+    const $tenant = document.getElementById("tenant");
+
+    // 기존 저장값 있으면 자동 채움
+    const saved = localStorage.getItem(KEY);
+    if (saved) $tenant.value = saved;
+
+    document.getElementById("go").addEventListener("click", () => {
+        const v = ($tenant.value || "").trim();
+        if (!v) {
+            alert("Tenant ID를 입력하세요.");
+            return;
+        }
+        localStorage.setItem(KEY, v);
+        location.href = "/policy";
+    });
+
+    document.getElementById("clear").addEventListener("click", () => {
+        localStorage.removeItem(KEY);
+        $tenant.value = "";
+        alert("저장된 Tenant ID를 삭제했습니다.");
+    });
+</script>
+</body>
+</html>

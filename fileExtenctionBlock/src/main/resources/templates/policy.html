@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>파일 확장자 차단</title>
+    <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+<div class="page">
+    <div class="panel">
+        <h1 class="title">◎ 파일 확장자 차단</h1>
+        <div class="hr"></div>
+        <p class="desc">파일확장자에 따라 특정 형식의 파일을 첨부하거나 전송하지 못하도록 제한</p>
+
+        <!-- 1) 고정 확장자 -->
+        <div class="row-section">
+            <div class="label">고정 확장자</div>
+            <div id="fixedBox" class="fixed-box"></div>
+        </div>
+
+        <!-- 2) 커스텀 입력 -->
+        <div class="row-section" style="margin-top: 16px;">
+            <div class="label">커스텀 확장자</div>
+            <div class="custom-input-wrap">
+                <input id="customInput" class="custom-input" placeholder="확장자 입력" maxlength="20" />
+                <button id="addBtn" class="btn-add">+추가</button>
+            </div>
+        </div>
+
+        <!-- 3) 커스텀 목록 -->
+        <div class="custom-area">
+            <div class="count"><span id="countNow">0</span>/<span id="countMax">200</span></div>
+            <div id="customTags" class="tag-area"></div>
+        </div>
+
+        <div class="footer">
+            <span class="tenant">Tenant: <span id="tenantLabel"></span></span>
+            <button id="reloadBtn" class="btn-link">새로고침</button>
+            <a class="btn-link" href="/">Tenant 변경</a>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+</div>
+
+<script src="/policy.js"></script>
+</body>
+</html>

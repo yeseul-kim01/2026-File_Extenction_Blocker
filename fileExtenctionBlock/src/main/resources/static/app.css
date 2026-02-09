@@ -1,0 +1,37 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background:#ffffff; color:#111; }
+
+.page { padding: 24px; }
+.panel { max-width: 980px; margin: 0 auto; padding: 18px 18px 14px; border: 1px solid #111; }
+
+.title { margin: 0; font-size: 22px; font-weight: 700; }
+.hr { height: 2px; background: #111; margin: 10px 0 12px; }
+.desc { margin: 0 0 16px; font-size: 15px; }
+
+.row-section { display:flex; align-items:center; gap: 14px; }
+.label { width: 120px; font-size: 16px; font-weight: 600; }
+
+.fixed-box { display:flex; flex-wrap: wrap; align-items:center; gap: 16px; }
+
+.check-item { display:flex; align-items:center; gap: 8px; font-size: 16px; }
+.check-item input[type="checkbox"] { width: 18px; height: 18px; }
+
+.custom-input-wrap { display:flex; align-items:center; gap: 10px; width: 100%; }
+.custom-input { flex: 1; height: 38px; padding: 0 12px; border: 1px solid #bbb; border-radius: 4px; font-size: 15px; }
+.btn-add { height: 38px; padding: 0 14px; border: 0; background: #bfbfbf; border-radius: 4px; font-weight: 700; cursor:pointer; }
+.btn-add:disabled { opacity: 0.6; cursor:not-allowed; }
+
+.custom-area { margin-top: 14px; border: 1px solid #bbb; min-height: 240px; padding: 12px; position: relative; }
+.count { position:absolute; top: 10px; left: 12px; font-size: 14px; color:#666; }
+.tag-area { margin-top: 34px; display:flex; flex-wrap: wrap; gap: 10px; }
+
+.tag { display:inline-flex; align-items:center; gap: 10px; border: 1px solid #bbb; border-radius: 8px; padding: 8px 10px; background: #fff; }
+.tag .ext { font-size: 15px; }
+.tag .x { width: 20px; height: 20px; border-radius: 50%; border: 1px solid #999; background: #fff; cursor:pointer; line-height: 18px; text-align:center; font-weight: 700; }
+
+.footer { display:flex; justify-content: flex-end; align-items:center; gap: 12px; margin-top: 12px; }
+.btn-link { border: 0; background: transparent; cursor:pointer; color:#333; text-decoration: underline; padding: 0; font-size: 14px; }
+.tenant { margin-right: auto; font-size: 14px; color:#555; }
+
+.toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: rgba(17,17,17,0.92); color: #fff; padding: 10px 14px; border-radius: 999px; font-size: 14px; }
+.hidden { display:none; }

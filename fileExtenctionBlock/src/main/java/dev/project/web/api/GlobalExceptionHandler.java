@@ -10,7 +10,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
+import dev.project.web.api.ErrorResponse;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -65,4 +65,7 @@ public class GlobalExceptionHandler {
         String v = MDC.get("traceId");
         return (v == null || v.isBlank()) ? "-" : v;
     }
+
+
+
 }

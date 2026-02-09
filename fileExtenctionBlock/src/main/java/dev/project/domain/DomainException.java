@@ -1,10 +1,10 @@
 package dev.project.domain;
 
-public abstract class DomainException extends RuntimeException {
+public class DomainException extends RuntimeException {
 
     private final String errorCode;
 
-    protected DomainException(String errorCode, String message) {
+    public DomainException(String errorCode, String message) {
         super(message);
         this.errorCode = errorCode;
     }

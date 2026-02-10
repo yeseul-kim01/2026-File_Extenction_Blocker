@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>File Extension Blocker - 설정</title>
+    <style>
+        body { font-family: system-ui, -apple-system; padding: 16px; }
+        .row { margin: 12px 0; }
+        input { width: 420px; padding: 8px; }
+        button { padding: 8px 12px; margin-right: 8px; }
+        .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    </style>
+</head>
+<body>
+<h2>File Extension Blocker 설정</h2>
+
+<div class="row">
+    <label>Base URL</label><br/>
+    <input id="baseUrl" placeholder="http://localhost:8080" />
+    <button id="saveBaseUrl">저장</button>
+</div>
+
+<div class="row">
+    <button id="issueTenant">API 키(tenantId) 발급</button>
+</div>
+
+<div class="row">
+    <div>현재 tenantId:</div>
+    <div id="tenantId" class="mono">-</div>
+</div>
+
+<div class="row">
+    <div id="msg"></div>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>

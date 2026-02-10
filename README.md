@@ -55,14 +55,14 @@
 2. 우측 상단 **Developer mode** ON
 3. `extension.zip` 압축 해제
 4. **Load unpacked** 클릭 → 압축 해제한 폴더 선택
-5. <img width="822" height="640" alt="스크린샷 2026-02-10 오후 10 01 26" src="https://github.com/user-attachments/assets/88965f85-20cd-4e5d-bd33-76766d77e578" />
+   <img width="822" height="640" alt="스크린샷 2026-02-10 오후 10 01 26" src="https://github.com/user-attachments/assets/88965f85-20cd-4e5d-bd33-76766d77e578" />
 6. 확장 프로그램 활성화 확인
 7. 확장 프로그램의 옵션 수정
-8. <img width="449" height="506" alt="스크린샷 2026-02-10 오후 10 01 51" src="https://github.com/user-attachments/assets/7a8d804b-1020-4ffe-88c1-c623c4a9a22e" />
-9. <img width="612" height="265" alt="스크린샷 2026-02-10 오후 10 02 15" src="https://github.com/user-attachments/assets/fd6c2e0b-ad0e-4454-9ac7-41b3bbe581e0" />
-10. <img width="460" height="317" alt="스크린샷 2026-02-10 오후 10 03 54" src="https://github.com/user-attachments/assets/78d18568-c7e4-4a34-b6ba-8af759e53014" />
-11. <img width="1097" height="576" alt="스크린샷 2026-02-10 오후 10 04 12" src="https://github.com/user-attachments/assets/d60a4568-d1c7-4d72-9cdf-4a7f0437cbd2" />
-12. <img width="1041" height="765" alt="스크린샷 2026-02-10 오후 10 17 49" src="https://github.com/user-attachments/assets/59103d17-aa9b-4c1e-ad3c-f4436be4f667" />
+   <img width="449" height="506" alt="스크린샷 2026-02-10 오후 10 01 51" src="https://github.com/user-attachments/assets/7a8d804b-1020-4ffe-88c1-c623c4a9a22e" />
+   <img width="533" height="344" alt="image" src="https://github.com/user-attachments/assets/962de39f-12ec-4d60-8c73-202614f6aac5" />
+    <img width="460" height="317" alt="스크린샷 2026-02-10 오후 10 03 54" src="https://github.com/user-attachments/assets/78d18568-c7e4-4a34-b6ba-8af759e53014" />
+    <img width="1097" height="576" alt="스크린샷 2026-02-10 오후 10 04 12" src="https://github.com/user-attachments/assets/d60a4568-d1c7-4d72-9cdf-4a7f0437cbd2" />
+    <img width="1041" height="765" alt="스크린샷 2026-02-10 오후 10 17 49" src="https://github.com/user-attachments/assets/59103d17-aa9b-4c1e-ad3c-f4436be4f667" />
 
 
 

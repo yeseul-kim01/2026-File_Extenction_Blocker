@@ -47,6 +47,28 @@
 > 다양한 클라이언트가 동일한 정책을 일관되게 적용하도록 설계되었습니다.
 
 ---
+## Extension Install (Developer Mode)
+
+1. Chrome 주소창에 `chrome://extensions` 접속
+2. 우측 상단 **Developer mode** ON
+3. `extension.zip` 압축 해제
+4. **Load unpacked** 클릭 → 압축 해제한 폴더 선택
+5. 확장 프로그램 활성화 확인
+
+
+## Browser Extension (Client)
+
+본 서비스는 브라우저 확장 프로그램과 함께 사용됩니다.
+
+확장 프로그램은:
+- 파일 업로드 시 확장자를 감지하고
+- 서버의 정책 API를 조회한 뒤
+- 차단 대상 확장자인 경우 업로드를 사전에 차단합니다.
+
+확장 프로그램은 SaaS 서버의 정책을 실제 사용자 환경에 적용하는
+Client 역할을 수행합니다.
+
+---
 
 ## Live URL
 

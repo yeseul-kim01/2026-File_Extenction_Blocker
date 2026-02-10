@@ -13,7 +13,7 @@ function show(msg) {
 
 async function load() {
     const data = await chrome.storage.sync.get([KEY_BASE_URL, KEY_TENANT_ID]);
-    $baseUrl.value = data[KEY_BASE_URL] || "http://localhost:8089";
+    $baseUrl.value = data[KEY_BASE_URL] || "http://fileext.yeseulkim.cloud/";
     $tenantId.textContent = data[KEY_TENANT_ID] || "-";
 }
 
@@ -26,7 +26,7 @@ $saveBaseUrl.addEventListener("click", async () => {
 
 $issueTenant.addEventListener("click", async () => {
     const data = await chrome.storage.sync.get([KEY_BASE_URL]);
-    const baseUrl = (data[KEY_BASE_URL] || "http://localhost:8080").replace(/\/$/, "");
+    const baseUrl = (data[KEY_BASE_URL] || "http://fileext.yeseulkim.cloud/").replace(/\/$/, "");
 
     show("발급 요청 중...");
 

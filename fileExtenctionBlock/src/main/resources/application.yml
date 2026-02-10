@@ -9,7 +9,7 @@ app:
     sha: ${GIT_SHA:dev}
 
   cors:
-    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:8089}
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:8089,http://fileext.yeseulkim.cloud}
 
 springdoc:
   api-docs:

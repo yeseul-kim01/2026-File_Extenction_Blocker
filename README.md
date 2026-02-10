@@ -58,9 +58,11 @@
    <img width="822" height="640" alt="스크린샷 2026-02-10 오후 10 01 26" src="https://github.com/user-attachments/assets/88965f85-20cd-4e5d-bd33-76766d77e578" />
 6. 확장 프로그램 활성화 확인
 7. 확장 프로그램의 옵션 수정
+8. 발급받은 테넌트 ID를 복사한 후, https://fileext.yeseulkim.cloud 에 접속하여 해당 테넌트 ID 를 입력해 정책 관리로 이동해야 합니다.
+9. 저장이 완료 됐다면, 아무 사이트에 들어가 파일 업로드를 할 시 해당 정책 관리에 맞추어 업로드가 진행됩니다.
    <img width="449" height="506" alt="스크린샷 2026-02-10 오후 10 01 51" src="https://github.com/user-attachments/assets/7a8d804b-1020-4ffe-88c1-c623c4a9a22e" />
    <img width="533" height="344" alt="image" src="https://github.com/user-attachments/assets/962de39f-12ec-4d60-8c73-202614f6aac5" />
-    <img width="460" height="317" alt="스크린샷 2026-02-10 오후 10 03 54" src="https://github.com/user-attachments/assets/78d18568-c7e4-4a34-b6ba-8af759e53014" />
+<img width="431" height="284" alt="image" src="https://github.com/user-attachments/assets/3d63cfd9-5359-44ca-a11a-afc6b677f4af" />
     <img width="1097" height="576" alt="스크린샷 2026-02-10 오후 10 04 12" src="https://github.com/user-attachments/assets/d60a4568-d1c7-4d72-9cdf-4a7f0437cbd2" />
     <img width="1041" height="765" alt="스크린샷 2026-02-10 오후 10 17 49" src="https://github.com/user-attachments/assets/59103d17-aa9b-4c1e-ad3c-f4436be4f667" />
 
@@ -82,11 +84,11 @@ Client 역할을 수행합니다.
 
 ## Live URL
 
-- Web UI: `http://fileext.yeseulkim.cloud`
-- Health: `http://fileext.yeseulkim.cloud/health`
-- Version: `http://fileext.yeseulkim.cloud/version`
+- Web UI: `https://fileext.yeseulkim.cloud`
+- Health: `https://fileext.yeseulkim.cloud/health`
+- Version: `https://fileext.yeseulkim.cloud/version`
 
-> 현재는 HTTP만 사용
+>  HTTP,HTTPS 사용
 
 ---
 
